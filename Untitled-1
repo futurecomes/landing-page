@@ -1,0 +1,17 @@
+SELECT xtzdo_mijoshop_order.firstname, 
+xtzdo_mijoshop_order.lastname, 
+xtzdo_mijoshop_order.payment_company, 
+xtzdo_mijoshop_order.email, 
+xtzdo_mijoshop_order.payment_address_1, 
+xtzdo_mijoshop_order.payment_city, 
+xtzdo_mijoshop_order.payment_zone,xtzdo_mijoshop_order.payment_postcode, 
+xtzdo_mijoshop_order.payment_country, 
+xtzdo_mijoshop_order.telephone, 
+xtzdo_mijoshop_order_product.order_id, 
+xtzdo_mijoshop_order.date_added 
+FROM xtzdo_mijoshop_order LEFT JOIN xtzdo_mijoshop_order_product 
+ON xtzdo_mijoshop_order.order_id =xtzdo_mijoshop_order_product.order_id 
+WHERE xtzdo_mijoshop_order_product.model 
+LIKE '%NAMEGOESHERE%' AND xtzdo_mijoshop_order.order_status_id LIKE '%5%'
+
+Script must  allow us to change the number given for the  NAMEGOESHERE variable in the last line.
